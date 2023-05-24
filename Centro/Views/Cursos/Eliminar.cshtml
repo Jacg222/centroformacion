@@ -1,0 +1,20 @@
+﻿@model CursosModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Eliminar Curso</h5>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Cursos" method="POST">
+            <input asp-for="id_curso" type="hidden" class="form-control">
+            <div class="alert alert-danger" role="alert">
+                ¿desea eliminar el curso: @Html.DisplayFor(m => m.nombre) ?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="Listar" asp-controller="Cursos" class="btn btn-warning">volver a la lista</a>
+        </form>
+    </div>
+</div>

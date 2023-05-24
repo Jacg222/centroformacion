@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+   <link rel="stylesheet" href="./css/bootstrap.min.css">
+   <meta charset="UTF-8">
+</head>
+<body>
+
+  <nav class="navbar bg-primary">
+    <div class="container-fluid">
+      <a href="cursos.html" class="navbar-brand fw-bold text-light">CURSOS</a>
+      <a href="alumnos.html" class="navbar-brand fw-bold text-light">ALUMNOS</a>
+      <form class="d-flex">
+        <input type="search" id="search" placeholder="Buscar" class="form-control me-2">
+        <button type="submit" class="btn btn-warning">Buscar</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="row p-4">
+      <div class="col-md-4 offset-md-1 text-start">
+        <div class="card">
+          <div class="card-body">
+            <form id="task-form">
+              <div class="form-group">
+                <input type="text" id="nombre" placeholder="Nombre del curso" class="form-control my-2">
+              </div>
+              <div class="form-group">
+                <textarea name="descripcion" id="descripcion" cols="20" rows="5" class="form-control my-2" placeholder="Descripcion del curso"></textarea>
+              </div>
+              <div class="form-group">
+                <textarea name="temario" id="temario" cols="20" rows="5" class="form-control my-2" placeholder="Temario del curso"></textarea>
+              </div>
+              <input type="hidden" id="taskId">
+              <button type="submit" class="btn btn-primary text-center w-100">Guardar Curso</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+
+        <table class="table table-bordered table-sm" id="task-result">
+          <thead>
+          </thead>
+          <tbody id="container"></tbody>
+      </table>
+
+        <div class="table-responsive col-md-12">
+          <table class="table table-bordered table-sm">
+            <thead>
+              <tr>
+                <td class="text-center">ID</td>
+                <td class="text-center">Nombre</td>
+                <td class="text-center">Descripcion</td>
+                <td class="text-center">Temario</td>
+                <td class="text-center">Opciones</td>
+              </tr>
+            </thead>
+            <tbody id="tasks"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<footer class="bg-dark p-2 mt-5 text-light position-fixed bottom-0 w-100 text-center">
+</footer>
+<script src="./js/jquery-3.7.0.min.js"></script>
+<script src="./js/cursos.js"></script>
+</body>
+</html>

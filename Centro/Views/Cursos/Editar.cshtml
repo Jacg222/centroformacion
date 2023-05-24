@@ -1,0 +1,30 @@
+﻿@model CursosModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <h5 class="card-header">Editar Curso</h5>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Cursos" method="POST">
+            <input asp-for="id_curso" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Nombre del curso</label>
+                <input asp-for="nombre" type="text" class="form-control">
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripcion del curso</label>
+                <input asp-for="descripcion" type="text" class="form-control">
+                <span asp-validation-for="descripcion" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">temario del curso</label>
+                <input asp-for="temario" type="text" class="form-control">
+                <span asp-validation-for="temario" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="Listar" asp-controller="Cursos" class="btn btn-warning">volver a la lista</a>
+        </form>
+    </div>
+</div>
